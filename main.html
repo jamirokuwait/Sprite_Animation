@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-core.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body >
+    <canvas id="testcanvas" style="border: 10px solid black;">
+        Your browser does not support HTML5 Canvas. Please shift to a newer browser.
+        
+    </canvas>
+    
+    <div class="controls" style="position: absolute; top: 50px; z-index: 10; left: 650px;  font-size: 50px;">
+        <label for="animations">Animation:</label>
+        <select id="animations" style="font-size: 45px;" >
+            <option value="idle" style="font-size: 45px;">idle</option>
+            <option value="jump" style="font-size: 45px;">jump</option>
+            <option value="run" style="font-size: 45px;">run</option>
+            <option value="fall" style="font-size: 45px;">fall</option>
+            <option value="dizzy" style="font-size: 45px;">dizzy</option>
+            <option value="sit" style="font-size: 45px;">sit</option>
+            <option value="roll" style="font-size: 45px;">roll</option>
+            <option value="bite" style="font-size: 45px;">bite</option>
+            <option value="ko" style="font-size: 45px;">ko</option>
+            <option value="getHit" style="font-size: 45px;">getHit</option>
+
+        </select>
+
+    </div>
+    <script  src="main.js"></script>
+    <audio style="position: absolute; top: 120px; z-index: 10; left: 650px;  font-size: 50px;" id="music" loop controls>
+        <source src="/drone_terror.wav" type="audio/mpeg">
+        <source src="/drone_easy.wav" type="audio/mpeg">
+    </audio>
+        
+    </body>
+</html>
+
+
+
+
+
+
+<!-- 
+    
+    Testing for Audio Support
+    
+    
+    <script> 
+    var audio = document.createElement("audio");
+    var mp3Support, oggSupport;
+    if (audio.canPlayType) {
+        // Currently canPlayType() returns: "", "maybe", or "probably"
+        mp3Support = "" !== audio.canPlayType("audio/mpeg");
+        oggSupport = "" !== audio.canPlayType("audio/ogg; codecs=\"vorbis\"");
+    } else {
+        // The audio tag is not supported
+        mp3Support = false;
+        oggSupport = false;
+    }
+    // Check for ogg, then mp3, and finally set soundFileExtn to undefined
+    var soundFileExtn = oggSupport ? ".ogg" : mp3Support ? ".mp3" : undefined;
+    if (soundFileExtn) {
+        var sound = new Audio();
+        // Load sound file with the detected extension
+        sound.src = "music" + soundFileExtn;
+        sound.play();
+    }  
+</script>
+
+IMAGE LOADER
+
+var imageLoader = {
+    loaded: true,
+    loadedImages: 0,
+    totalImages: 0,
+    load: function(url) {
+        this.totalImages++;
+        this.loaded = false;
+        var image = new Image();
+        image.src = url;
+        image.onload = function() {
+            imageLoader.loadedImages++;
+            if (imageLoader.loadedImages === imageLoader.totalImages) {
+                imageLoader.loaded = true;
+            }
+            image.onload = undefined;
+        }
+        return image;
+    }
+}
+
+
+-->
